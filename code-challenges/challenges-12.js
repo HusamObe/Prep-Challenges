@@ -71,9 +71,19 @@ const oddFiltration = (arr) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvsFiltration = (arr) => {
-    const result = arr.filter(data => ((data > 4) && (data == "tech")));
-    console.log(result);
-    return result;
+    return arr.filter(candidate => candidate.yearsOfExperience > 4 && candidate.tech === "JS")
+        .map(candidate => {
+            let fullName = "";
+            if (candidate.firstName) {
+                fullName = candidate.firstName;
+                if (candidate.LastName) {
+                    fullName += " " + candidate.LastName;
+                }
+            } else if (candidate.LastName) {
+                fullName = candidate.LastName;
+            }
+            return { fullName: fullName, tech: candidate.tech };
+        });
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -88,7 +98,15 @@ const cvsFiltration = (arr) => {
 // 
 
 const vowelsFiltration = (arr) => {
-    // write your code here
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    return arr.filter(word => {
+        for (let i = 0; i < word.length; i++) {
+            if (vowels.indexOf(word[i]) !== -1) {
+                return false;
+            }
+        }
+        return true;
+    });
 }
 // -------------------------------------------------------------------------------------------------------
 

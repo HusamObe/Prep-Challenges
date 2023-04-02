@@ -19,7 +19,7 @@ describe('Challenge16-02', () => {
 })
 
 describe('Challenge16-03', () => {
-    test.skip('Even characters', () => {
+    test('Even characters', () => {
         let input = "coding";
         let output = "cdn"
 

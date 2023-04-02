@@ -46,12 +46,11 @@ const detectFace = (arr) => {
 // Input <= "coding" output =>"cdn"
 
 const eveCharacter = (str) => {
-    const newArr = [];
-    for (let i = 0; i < str.length; i + 2) {
-        newArr.push(str[i]);
+    let result = '';
+    for (let i = 0; i < str.length; i += 2) {
+        result += str[i];
     }
-    newStr = newArr.join('');
-    return newStr;
+    return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
